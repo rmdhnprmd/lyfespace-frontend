@@ -13,6 +13,10 @@
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link href="style/main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
@@ -44,7 +48,7 @@
               <a href="/index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="/categories.html" class="nav-link active">Categories</a>
+              <a href="/categories.html" class="nav-link">Categories</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Rewards</a>
@@ -122,16 +126,236 @@
           </div>
         </div>
       </section>
+
+      <section class="store-gallery" id="gallery">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8" data-aos="zoom-in">
+              <transition name="slide-fade" mode="out-in">
+                <img
+                  :src="photos[activePhoto].url"
+                  :key="photos[activePhoto].id"
+                  class="w-100 main-image"
+                  alt=""
+                />
+              </transition>
+            </div>
+            <div class="col-lg-2">
+              <div class="row">
+                <div
+                  class="col-3 col-lg-12 mt-2 mt-lg-0"
+                  v-for="(photo, index) in photos"
+                  :key="photo.id"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <a href="#" @click="changeActive(index)">
+                    <img
+                      :src="photo.url"
+                      class="w-100 thumbnail-image"
+                      :class="{active: index == activePhoto}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="store-details-container" data-aos="fade-up">
+        <section class="store-heading">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h1>Nyender Sofa</h1>
+                <div class="owner">By Ramadhan Permadi</div>
+                <div class="price">$899</div>
+              </div>
+
+              <div class="col-lg-2" data-aos="zoom-in">
+                <a
+                  href="cart.html"
+                  class="btn btn-success d-grid text-white mb-3"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="store-description">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <p>
+                  Enjoy the super comfy NYENDER sofa with embracing feel and
+                  deep seat cushions made of pocket springs, high resilience
+                  foam and polyester fibres, adding both firm support and
+                  relaxing softness.
+                </p>
+                <p>
+                  Reversible back cushions provide soft support for your back
+                  and two different sides to wear. Thanks to the combination of
+                  polyester fibres and cut foam the cushions will retain their
+                  shape and comfort year after year. The cover is easy to keep
+                  clean as it is removable and can be machine washed. A range of
+                  coordinated covers makes it easy for you to give your
+                  furniture a new look.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-23 text-center">
-            <p class="pt-4 pb-2">
-              Copyright &copy; LyfeSpace by rmdhnprmd 2021 • All rights reserved
-              • Made in Jakarta
-            </p>
+      <div class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-3">
+              <h6>Contact Us</h6>
+              <ul class="footer-links">
+                <li>
+                  <em class="fa fa-volume-control-phone"></em>
+                  1500-0321
+                </li>
+                <li>
+                  <em class="fa fa-whatsapp"></em>
+                  <a href="https://wa.me/6281220022000" target="blank"
+                    >+62 812-2002-2000
+                  </a>
+                </li>
+                <li>
+                  <em class="fa fa-envelope"></em>
+                  <a href="mailto:support@lyfespace.com"
+                    >support@lyfespace.com
+                  </a>
+                </li>
+                <li class="address mt-4">
+                  <a href="https://goo.gl/maps/z2VwJbML4g9TfSrD8" target="blank"
+                    >LyfeSpace Headquarter, Sinarmas MSIG Tower 13th Floor,
+                    Sudirman South Jakarta, Indonesia</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+              <h6>Categories</h6>
+              <ul class="footer-links">
+                <li><a href="#">Baby</a></li>
+                <li>
+                  <a href="#">Furniture</a>
+                </li>
+                <li>
+                  <a href="#">Gadgets</a>
+                </li>
+                <li>
+                  <a href="#">Make Up</a>
+                </li>
+                <li>
+                  <a href="#">Sneaker</a>
+                </li>
+                <li>
+                  <a href="#">Tools</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+              <h6>LyfeSpace</h6>
+              <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#">Terms & Condition</a>
+                </li>
+                <li><a href="#">Service Center</a></li>
+              </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+              <div class="footer-widget">
+                <div class="section-heading">
+                  <h6>Subscribe</h6>
+                  <span class="animate-border border-black"></span>
+                </div>
+                <p>
+                  <!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
+                  Reference site about LyfeSpace, giving information on its
+                  origins, as well.
+                </p>
+                <form action="#">
+                  <div class="form-row">
+                    <div class="col dk-footer-form">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Email Address"
+                      />
+                      <button type="submit">
+                        <em class="fa fa-send"></em>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <!-- End form -->
+              </div>
+              <!-- End footer widget -->
+            </div>
+          </div>
+          <hr />
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">
+                Copyright &copy; LyfeSpace 2021 • Made in Jakarta • All rights
+                reserved by
+                <a href="#">rmdhnprmd</a>.
+              </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li>
+                  <a
+                    class="facebook"
+                    href="https://www.facebook.com/"
+                    target="blank"
+                    ><em class="fa fa-facebook"></em
+                  ></a>
+                </li>
+                <li>
+                  <a class="twitter" href="https://twitter.com/" target="blank"
+                    ><em class="fa fa-twitter"></em
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    class="dribbble"
+                    href="https://dribbble.com/"
+                    target="blank"
+                    ><em class="fa fa-dribbble"></em
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    class="linkedin"
+                    href="https://id.linkedin.com/"
+                    target="blank"
+                    ><em class="fa fa-linkedin"></em
+                  ></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -143,6 +367,41 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script src="/vendor/vue/vue.js"></script>
+    <script>
+      var gallery = new Vue({
+        el: "#gallery",
+        mounted() {
+          AOS.init();
+        },
+        data: {
+          activePhoto: 0,
+          photos: [
+            {
+              id: 1,
+              url: "/images/product-details-1.jpg",
+            },
+            {
+              id: 2,
+              url: "/images/product-details-2.jpg",
+            },
+            {
+              id: 3,
+              url: "/images/product-details-3.jpg",
+            },
+            {
+              id: 4,
+              url: "/images/product-details-4.jpg",
+            },
+          ],
+        },
+        methods: {
+          changeActive(id) {
+            this.activePhoto = id;
+          },
+        },
+      });
     </script>
     <script src="/script/navbar-scroll.js"></script>
   </body>
