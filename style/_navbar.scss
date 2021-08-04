@@ -1,6 +1,5 @@
 .navbar-store {
-  padding-top: 5px; //15px by bwa
-  background-color: #fff !important;
+  padding: 5px; //15px by bwa
 
   .navbar-brand {
     font-family: "Major Mono Display", monospace;
@@ -27,15 +26,9 @@
     }
 
     .btn-success {
-      background-color: #8470ff;
-      border-color: #8470ff;
-      opacity: 0.6;
-    }
-
-    .btn-success:hover {
-      background-color: #8470ff;
-      border-color: #8470ff;
-      opacity: 1;
+      @include button-variant(#8470ff, transparent);
+      color: #fff !important;
+      border-radius: 8px;
     }
   }
 

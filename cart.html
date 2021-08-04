@@ -83,7 +83,8 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link d-inline-block mt-2">
-                <img src="/images/icon-cart-empty.svg" alt="" />
+                <img src="/images/icon-cart-filled.svg" alt="" />
+                <div class="card-badge">3</div>
               </a>
             </li>
           </ul>
@@ -105,7 +106,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="page-content page-details">
+    <div class="page-content page-cart">
       <section
         class="store-breadcrumbs"
         data-aos="fade-up"
@@ -119,7 +120,7 @@
                   <li class="breadcrumb-item">
                     <a href="/index.html">Home</a>
                   </li>
-                  <li class="breadcrumb-item active">Product Details</li>
+                  <li class="breadcrumb-item active">Cart</li>
                 </ol>
               </nav>
             </div>
@@ -127,164 +128,188 @@
         </div>
       </section>
 
-      <section class="store-gallery" id="gallery">
+      <section class="store-cart">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-8" data-aos="zoom-in">
-              <transition name="slide-fade" mode="out-in">
-                <img
-                  :src="photos[activePhoto].url"
-                  :key="photos[activePhoto].id"
-                  class="w-100 main-image"
-                  alt=""
-                />
-              </transition>
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-12 table-responsive">
+              <table class="table table-borderless table-cart">
+                <thead>
+                  <tr>
+                    <th id="table-head">Image</th>
+                    <th id="table-head">Name &amp; Seller</th>
+                    <th id="table-head">Price</th>
+                    <th id="table-head">Menu</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: 15%;">
+                      <img src="/images/product-cart-1.jpg" alt="" class="cart-image"/>
+                    </td>
+                    <td style="width: 35%;">
+                      <div class="product-title">Nyender Sofa</div>
+                      <div class="product-subtitle">by Rebahan Company</div>
+                    </td>
+                    <td style="width: 35%;">
+                      <div class="product-title">$899</div>
+                      <div class="product-subtitle">USD</div>
+                    </td>
+                    <td style="width: 20%;">
+                      <a href="#" class="btn btn-remove-cart">
+                        Remove
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15%;">
+                      <img src="/images/product-cart-2.jpg" alt="" class="cart-image"/>
+                    </td>
+                    <td style="width: 35%;">
+                      <div class="product-title">Orange Bogotta</div>
+                      <div class="product-subtitle">by Typebeast</div>
+                    </td>
+                    <td style="width: 35%;">
+                      <div class="product-title">$350</div>
+                      <div class="product-subtitle">USD</div>
+                    </td>
+                    <td style="width: 20%;">
+                      <a href="#" class="btn btn-remove-cart">
+                        Remove
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15%;">
+                      <img src="/images/product-cart-3.jpg" alt="" class="cart-image"/>
+                    </td>
+                    <td style="width: 35%;">
+                      <div class="product-title">Tatakan Gelas</div>
+                      <div class="product-subtitle">by Pecah Belah</div>
+                    </td>
+                    <td style="width: 35%;">
+                      <div class="product-title">$50</div>
+                      <div class="product-subtitle">USD</div>
+                    </td>
+                    <td style="width: 20%;">
+                      <a href="#" class="btn btn-remove-cart">
+                        Remove
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="col-lg-2">
-              <div class="row">
-                <div
-                  class="col-3 col-lg-12 mt-2 mt-lg-0"
-                  v-for="(photo, index) in photos"
-                  :key="photo.id"
-                  data-aos="zoom-in"
-                  data-aos-delay="100"
-                >
-                  <a href="#store-gallery" @click="changeActive(index)">
-                    <img
-                      :src="photo.url"
-                      class="w-100 thumbnail-image"
-                      :class="{active: index == activePhoto}"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
+          </div>
+
+          <div class="row" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-12">
+              <hr/>
+            </div>
+            <div class="col-12">
+              <h2 class="mb-4">Shipping Details</h2>
+            </div>
+          </div>
+
+          <form class="row mb-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-6 mb-4">
+              <label for="address" class="form-label">Address</label>
+              <input
+                type="text"
+                class="form-control" 
+                id="address" 
+                placeholder="1234 Main St"
+              >
+            </div>
+            
+            <div class="col-md-6 mb-4">
+              <label for="address2" class="form-label">Address 2</label>
+              <input
+                type="text"
+                class="form-control" 
+                id="address2" 
+                placeholder="Apartment, studio, or floor"
+              >
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <label for="province" class="form-label">Province</label>
+              <select name="province" id="province" class="form-select">
+                <option value="West Java">West Java</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <label for="city" class="form-label">City</label>
+              <select name="city" id="city" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Bandung">Bandung</option>
+                <option value="Bekasi">Bekasi</option>
+                <option value="Bogor">Bogor</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <label for="postalCode" class="form-label">Postal Code</label>
+              <input
+                type="text"
+                class="form-control" 
+                id="postalCode" 
+                placeholder="11111"
+              >
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <label for="state" class="form-label">State</label>
+              <select name="state" id="state" class="form-select">
+                <option value="Indonesia">Indonesia</option>
+              </select>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+              <label for="mobile" class="form-label">Mobile</label>
+              <input
+                type="text"
+                class="form-control" 
+                id="mobile" 
+                placeholder="+62 81220022000"
+              >
+            </div>
+          </form>
+
+          <div class="row" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-12">
+              <hr/>
+            </div>
+            <div class="col-12">
+              <h2 class="mb-1">Payment Informations</h2>
+            </div>
+          </div>
+
+          <div class="row" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-4 col-md-2">
+              <div class="product-title">$10</div>
+              <div class="product-subtitle">Tax</div>
+            </div>
+            <div class="col-4 col-md-3">
+              <div class="product-title">$20</div>
+              <div class="product-subtitle">Product Insurance</div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div class="product-title">$50</div>
+              <div class="product-subtitle">Ship to Bekasi</div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div class="product-title text-success">$1379</div>
+              <div class="product-subtitle">Total</div>
+            </div>
+            <div class="col-8 col-md-3">
+              <a href="/success.html" class="btn btn-success mt-4 px-4 d-grid">
+                Checkout Now
+              </a>
             </div>
           </div>
         </div>
       </section>
-
-      <div class="store-details-container" data-aos="fade-up">
-        <section class="store-heading">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8">
-                <h1>Nyender Sofa</h1>
-                <div class="owner">By Rebahan Company</div>
-                <div class="price">$899</div>
-              </div>
-
-              <div class="col-lg-2" data-aos="zoom-in">
-                <a
-                  href="cart.html"
-                  class="btn btn-success d-grid text-white mb-3"
-                  >Add to Cart</a
-                >
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="store-description">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-lg-8">
-                <p>
-                  Enjoy the super comfy NYENDER sofa with embracing feel and
-                  deep seat cushions made of pocket springs, high resilience
-                  foam and polyester fibres, adding both firm support and
-                  relaxing softness.
-                </p>
-                <p>
-                  Reversible back cushions provide soft support for your back
-                  and two different sides to wear. Thanks to the combination of
-                  polyester fibres and cut foam the cushions will retain their
-                  shape and comfort year after year. The cover is easy to keep
-                  clean as it is removable and can be machine washed. A range of
-                  coordinated covers makes it easy for you to give your
-                  furniture a new look.
-                </p>
-                <p>
-                  10-year limited warranty. Read about the terms in the limited
-                  warranty brochure.
-                </p>
-                <p>
-                  The cover has a lightfastness level of 5 (the ability to
-                  resist color fading) on a scale of 1 to 8. According to
-                  industry standards, a lightfastness level of 4 or higher is
-                  suitable for home use.
-                </p>
-                <p>
-                  This cover's ability to resist abrasion has been tested to
-                  handle 15,000 cycles, which is suitable for furniture that
-                  should withstand everyday use in the home.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="store-review">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-lg-8 mt-3 mb-3">
-                <h5>Customer Review (3)</h5>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 col-lg-8">
-                <div class="d-flex media">
-                  <img
-                    src="images/icon-user-2.png"
-                    alt=""
-                    class="rounded-circle"
-                  />
-                  <div class="ms-3 mt-2 mb-1 media-body">
-                    <h5>Asep Pangabean</h5>
-                    <p>
-                      I thought it was not good for living. I really happy to
-                      decide buy this product last week now feels like homey.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="d-flex media">
-                  <img
-                    src="images/icon-user-3.png"
-                    alt=""
-                    class="rounded-circle"
-                  />
-                  <div class="ms-3 mt-2 mb-1 media-body">
-                    <h5>Sugeng</h5>
-                    <p>
-                      Color is great with the minimalist concept. Even I thought
-                      it was made by Cactus industry. I do really satisfied with
-                      this.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="d-flex media">
-                  <img
-                    src="images/icon-user-4.png"
-                    alt=""
-                    class="rounded-circle"
-                  />
-                  <div class="ms-3 mt-2 mb-1 media-body">
-                    <h5>Japra Keling</h5>
-                    <p>
-                      When I saw at first, it was really awesome to have with.
-                      Just let me know if there is another upcoming product like
-                      this.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
 
     <footer>
       <div class="site-footer">
@@ -442,41 +467,6 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
-    </script>
-    <script src="/vendor/vue/vue.js"></script>
-    <script>
-      var gallery = new Vue({
-        el: "#gallery",
-        mounted() {
-          AOS.init();
-        },
-        data: {
-          activePhoto: 0,
-          photos: [
-            {
-              id: 1,
-              url: "/images/product-details-1.jpg",
-            },
-            {
-              id: 2,
-              url: "/images/product-details-2.jpg",
-            },
-            {
-              id: 3,
-              url: "/images/product-details-3.jpg",
-            },
-            {
-              id: 4,
-              url: "/images/product-details-4.jpg",
-            },
-          ],
-        },
-        methods: {
-          changeActive(id) {
-            this.activePhoto = id;
-          },
-        },
-      });
     </script>
     <script src="/script/navbar-scroll.js"></script>
   </body>
