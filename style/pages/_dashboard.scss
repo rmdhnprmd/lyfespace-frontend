@@ -119,5 +119,10 @@
         }
       }
     }
+
+    .btn-success {
+      @include button-variant(#8470ff, transparent);
+      color: #fff !important;
+    }
   }
 }

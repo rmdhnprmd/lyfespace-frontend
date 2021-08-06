@@ -11622,6 +11622,36 @@ footer .social-icons a.linkedin:hover {
   border-bottom: 2px solid #0c0d36;
   background: none;
 }
+.page-dashboard .section-content .btn-success {
+  color: #000;
+  background-color: #8470ff;
+  border-color: transparent;
+  color: #fff !important;
+}
+.page-dashboard .section-content .btn-success:hover {
+  color: #000;
+  background-color: #9685ff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.btn-check:focus + .page-dashboard .section-content .btn-success, .page-dashboard .section-content .btn-success:focus {
+  color: #000;
+  background-color: #9685ff;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.btn-check:checked + .page-dashboard .section-content .btn-success, .btn-check:active + .page-dashboard .section-content .btn-success, .page-dashboard .section-content .btn-success:active, .page-dashboard .section-content .btn-success.active, .show > .page-dashboard .section-content .btn-success.dropdown-toggle {
+  color: #000;
+  background-color: #9d8dff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.btn-check:checked + .page-dashboard .section-content .btn-success:focus, .btn-check:active + .page-dashboard .section-content .btn-success:focus, .page-dashboard .section-content .btn-success:active:focus, .page-dashboard .section-content .btn-success.active:focus, .show > .page-dashboard .section-content .btn-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.page-dashboard .section-content .btn-success:disabled, .page-dashboard .section-content .btn-success.disabled {
+  color: #000;
+  background-color: #8470ff;
+  border-color: transparent;
+}
 
 .component-categories {
   background: #f4f4f4;
