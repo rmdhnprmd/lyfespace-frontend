@@ -11126,9 +11126,6 @@ footer .social-icons a.twitter:hover {
 footer .social-icons a.linkedin:hover {
   background-color: #007bb6;
 }
-footer .social-icons a.dribbble:hover {
-  background-color: #ea4c89;
-}
 @media (max-width: 767px) {
   footer .social-icons li.title {
     display: block;
@@ -11612,6 +11609,19 @@ footer .social-icons a.dribbble:hover {
   line-height: 24px;
   color: #9191a9;
 }
+.page-dashboard .section-content .nav-pills .nav-link {
+  font-weight: normal;
+  font-size: 18px;
+  color: #9191a9;
+  border-radius: 0;
+}
+.page-dashboard .section-content .nav-pills .nav-link.active {
+  font-weight: 500;
+  font-size: 18px;
+  color: #0c0d36;
+  border-bottom: 2px solid #0c0d36;
+  background: none;
+}
 
 .component-categories {
   background: #f4f4f4;
@@ -11672,7 +11682,7 @@ footer .social-icons a.dribbble:hover {
 }
 
 .store-breadcrumbs {
-  margin-top: 10px !important;
+  margin-top: 5px !important;
 }
 .store-breadcrumbs .breadcrumb {
   padding: 0;
@@ -11708,6 +11718,16 @@ footer .social-icons a.dribbble:hover {
   font-weight: 600;
   font-size: 32px;
   line-height: 48px;
+  color: #0c0d36;
+}
+
+.card-list {
+  margin-bottom: 10px;
+}
+.card-list .card-body {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 40px;
   color: #0c0d36;
 }
 
