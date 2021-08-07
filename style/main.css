@@ -11761,6 +11761,10 @@ footer .social-icons a.linkedin:hover {
   color: #0c0d36;
 }
 
+.card-dashboard-product {
+  margin-bottom: 15px;
+}
+
 .slide-fade-enter-active {
   transition: all 0.2s ease;
 }
