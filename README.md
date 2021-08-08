@@ -1,11 +1,12 @@
 # BWAStore HTML Starter Template
+
 Starter Template ini dapat anda gunakan untuk memulai project pada video tutorial [BWASTORE](https://bit.ly/BWASTORE)
 
 ## Lisensi
 
 MIT License
 
-Copyright (c) 2020 Galih Pratama
+Copyright (c) 2021 Ramadhan Permadi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
