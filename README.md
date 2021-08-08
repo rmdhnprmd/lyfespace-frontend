@@ -1,6 +1,6 @@
-# BWAStore HTML Starter Template
+# MY LITTLE PROJECT
 
-Starter Template ini dapat anda gunakan untuk memulai project pada video tutorial [BWASTORE](https://bit.ly/BWASTORE)
+Projek Toko Online hasil kursus dari [BWASTORE](https://bit.ly/BWASTORE)
 
 ## Lisensi
 
