@@ -11664,6 +11664,12 @@ footer .social-icons a.linkedin:hover {
   border-bottom: 2px solid #0c0d36;
   background: none;
 }
+.page-dashboard .section-content .gallery-container .delete-gallery {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 2px;
+}
 .page-dashboard .section-content .btn-success {
   color: #000;
   background-color: #8470ff;
