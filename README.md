@@ -1,6 +1,6 @@
 # MY LITTLE PROJECT
 
-Projek Toko Online hasil kursus dari [BWASTORE](https://bit.ly/BWASTORE)
+Projek Toko Online dari [BWASTORE](https://bit.ly/BWASTORE)
 
 ## Lisensi
 
